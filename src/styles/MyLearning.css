@@ -1,0 +1,123 @@
+.my-learning-unity {
+    position: relative;
+    background: #020205;
+    /* Deep black base */
+    min-height: 100vh;
+    color: #fff;
+    overflow-x: hidden;
+}
+
+/* Luxury Vertical Plates for Learning Background */
+.my-learning-unity::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 0%, transparent 60%),
+        repeating-linear-gradient(90deg,
+            transparent 0%,
+            transparent calc(25% - 1px),
+            rgba(255, 255, 255, 0.01) 25%,
+            rgba(0, 0, 0, 0.4) calc(25% + 1px));
+    background-size: 100% 100%, 25% 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 0.8;
+}
+
+.player-header-unity,
+.my-learning-body {
+    position: relative;
+    z-index: 10;
+}
+
+.player-header-unity {
+    padding-top: 100px;
+    background: transparent;
+}
+
+.my-learning-body {
+    padding: 60px 0 100px;
+}
+
+.learning-tabs-unity {
+    display: flex;
+    gap: 48px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 60px;
+}
+
+.learning-tabs-unity button {
+    padding-bottom: 20px;
+    font-weight: 700;
+    color: #94a3b8;
+    position: relative;
+    font-size: 1.1rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.learning-tabs-unity button:hover {
+    color: #f8fafc;
+}
+
+.learning-tabs-unity button.active {
+    color: #4f46e5;
+}
+
+.learning-tabs-unity button.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #4f46e5;
+    border-radius: 10px 10px 0 0;
+}
+
+.concepts-grid-unity {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 32px;
+}
+
+.empty-learning-state {
+    text-align: center;
+    padding: 100px 40px;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+    border-radius: 32px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.empty-learning-state h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 24px 0 12px;
+    color: #f8fafc;
+}
+
+.empty-learning-state p {
+    font-size: 1.1rem;
+    color: #94a3b8;
+    margin-bottom: 32px;
+}
+
+@media (max-width: 768px) {
+    .learning-tabs-unity {
+        gap: 24px;
+        overflow-x: auto;
+    }
+
+    .learning-tabs-unity button {
+        font-size: 1rem;
+        white-space: nowrap;
+    }
+}

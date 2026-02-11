@@ -1,0 +1,203 @@
+.wallet-unity {
+    position: relative;
+    background: #020205;
+    /* Consistent deep black base */
+    padding: 120px 0 80px;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* High-Contrast Industrial Metallic Plates */
+.wallet-unity::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #050505;
+    background-image:
+        /* Top-Down Light Sheen */
+        linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, transparent 60%),
+        /* Brushed Metal Grain (Horizontal) */
+        repeating-linear-gradient(0deg, transparent 0px, transparent 1px, rgba(255, 255, 255, 0.015) 1px, rgba(255, 255, 255, 0.015) 2px),
+        /* Clearly Defined 3D Plates */
+        repeating-linear-gradient(90deg,
+            #0a0a0d 0px,
+            #1e1e24 1px,
+            #0f1014 3px,
+            #0a0a0d 10px,
+            #0a0a0d calc(100% - 5px),
+            rgba(0, 0, 0, 0.6) calc(100% - 3px),
+            rgba(0, 0, 0, 0.9) calc(100% - 1px),
+            #000000 100%);
+    background-size: 100% 100%, 100% 2px, 25% 100%;
+    z-index: 0;
+    pointer-events: none;
+    opacity: 1;
+}
+
+.content-max-width {
+    position: relative;
+    z-index: 1;
+}
+
+.wallet-grid {
+    display: grid;
+    grid-template-columns: 480px 1fr;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.wallet-unity h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 32px;
+    color: #f8fafc;
+    letter-spacing: -0.02em;
+}
+
+/* --- BALANCE SECTION --- */
+.balance-card-unity {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 48px;
+    border-radius: 32px;
+    /* 3D Elevation */
+    box-shadow:
+        0 40px 100px rgba(0, 0, 0, 0.6),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.balance-card-unity:hover {
+    transform: translateY(-8px);
+    border-color: rgba(123, 66, 245, 0.3);
+}
+
+.balance-label {
+    color: #94a3b8;
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.balance-value-unity {
+    font-size: 4.5rem;
+    font-weight: 800;
+    margin-bottom: 48px;
+    color: #fff;
+    letter-spacing: -0.03em;
+    /* Subtle 3D text shadow */
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.add-funds-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #f8fafc;
+}
+
+.fund-presets {
+    display: flex;
+    gap: 12px;
+}
+
+.preset-chip {
+    flex: 1;
+    padding: 14px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 14px;
+    color: #f8fafc;
+    font-weight: 700;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.preset-chip:hover {
+    background: rgba(79, 70, 229, 0.1);
+    border-color: #4f46e5;
+    transform: translateY(-2px);
+}
+
+/* --- TRANSACTION HISTORY --- */
+.tx-list-unity {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.tx-item-unity {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 32px;
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 24px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    /* 3D Elevation */
+    box-shadow:
+        0 10px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 1px rgba(255, 255, 255, 0.02);
+}
+
+.tx-item-unity:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.15);
+    transform: translateY(-4px) scale(1.01);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.tx-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.tx-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: #f8fafc;
+}
+
+.tx-date {
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.tx-amt {
+    font-size: 1.25rem;
+    font-weight: 800;
+}
+
+.tx-amt.plus {
+    color: #10b981;
+}
+
+.tx-amt.minus {
+    color: #f8fafc;
+}
+
+@media (max-width: 1024px) {
+    .wallet-grid {
+        grid-template-columns: 1fr;
+        gap: 48px;
+    }
+
+    .balance-card-unity {
+        padding: 32px;
+    }
+
+    .balance-value-unity {
+        font-size: 3.5rem;
+    }
+}

@@ -1,0 +1,189 @@
+.category-concepts-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0a0d 0%, #1a1a1f 100%);
+    padding: 120px 5% 40px 5%;
+    /* Top padding for navbar */
+}
+
+/* Header */
+.concepts-header {
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding-top: 20px;
+    /* Extra spacing from navbar */
+}
+
+.back-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #fff;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    transition: all 0.3s;
+    margin-bottom: 30px;
+}
+
+.back-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(-4px);
+}
+
+.category-title {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #fff;
+    margin-bottom: 12px;
+    text-align: left;
+    line-height: 1.2;
+}
+
+.category-subtitle {
+    font-size: 1.15rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+/* Concepts Grid */
+.concepts-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 24px;
+    /* Increased spacing between cards */
+}
+
+/* Small Concept Cards */
+.concept-card-small {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 18px;
+    /* Slightly more padding */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 150px;
+    /* Slightly taller for better readability */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.concept-card-small:hover {
+    transform: translateY(-6px);
+    border-color: rgba(123, 66, 245, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(123, 66, 245, 0.2);
+}
+
+.concept-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.concept-badge {
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: #7b42f5;
+    background: rgba(123, 66, 245, 0.1);
+    padding: 3px 10px;
+    border-radius: 8px;
+}
+
+.concept-rating {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fbbf24;
+}
+
+.concept-title {
+    font-size: 1rem;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+
+    /* Truncate to 2 lines */
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.concept-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.meta-item.price {
+    color: #10b981;
+    font-weight: 700;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.1rem;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+    .concepts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .category-title {
+        font-size: 2rem;
+    }
+
+    .concepts-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 16px;
+    }
+
+    .concept-card-small {
+        height: 130px;
+    }
+}
+
+@media (max-width: 480px) {
+    .concepts-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .category-concepts-page {
+        padding: 20px 4%;
+    }
+}

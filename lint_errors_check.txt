@@ -1,0 +1,16 @@
+﻿
+> repeat@0.0.0 lint
+> eslint .
+
+
+C:\Users\HP\OneDrive\Desktop\repeat\src\context\AuthContext.jsx
+  63:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\HP\OneDrive\Desktop\repeat\src\context\ContentContext.jsx
+  145:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+C:\Users\HP\OneDrive\Desktop\repeat\src\context\WalletContext.jsx
+  88:14  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+Γ£û 3 problems (3 errors, 0 warnings)
+

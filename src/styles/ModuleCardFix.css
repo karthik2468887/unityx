@@ -1,0 +1,30 @@
+﻿/* Only target the horizontal carousel module cards - make them very small and compact */
+.module-carousel-section .module-card-compact {
+    min-width: 150px !important;
+    max-width: 150px !important;
+    padding: 14px !important;
+}
+
+.module-carousel-section .module-card-title {
+    font-size: 0.9rem !important;
+    margin-bottom: 6px !important;
+}
+
+.module-carousel-section .module-card-subtitle {
+    font-size: 0.7rem !important;
+    margin-bottom: 12px !important;
+    -webkit-line-clamp: 2 !important;
+}
+
+.module-carousel-section .module-category-badge {
+    font-size: 0.65rem !important;
+    padding: 3px 10px !important;
+}
+
+.module-carousel-section .module-teacher-name {
+    font-size: 0.7rem !important;
+}
+
+.module-carousel-section .module-rating-small {
+    font-size: 0.75rem !important;
+}

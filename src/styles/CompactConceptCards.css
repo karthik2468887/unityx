@@ -1,0 +1,116 @@
+/* ====================================================
+   COMPACT CONCEPT CARDS - SMALL GRID LAYOUT
+   ==================================================== */
+
+.concept-card-unity {
+    background: rgba(255, 255, 255, 0.03) !important;
+    backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 16px !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+    display: flex !important;
+    flex-direction: column !important;
+
+    /* COMPACT SIZE */
+    height: 180px !important;
+    max-width: 100% !important;
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2) !important;
+}
+
+.concept-card-unity:hover {
+    transform: translateY(-6px) scale(1.02) !important;
+    border-color: rgba(123, 66, 245, 0.4) !important;
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3), 0 0 20px rgba(123, 66, 245, 0.2) !important;
+}
+
+/* Compact Image */
+.card-image-box {
+    position: relative !important;
+    width: 100% !important;
+    height: 80px !important;
+    overflow: hidden !important;
+}
+
+.card-image-box img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+}
+
+/* Card Content - Compact */
+.card-content-box {
+    padding: 10px 12px !important;
+    flex: 1 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+}
+
+.card-title-unity {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+    margin-bottom: 4px !important;
+
+    /* Truncate to 1 line */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+.card-meta-row {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    font-size: 0.7rem !important;
+    margin-bottom: 6px !important;
+}
+
+.card-stats-row {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    font-size: 0.75rem !important;
+}
+
+.card-price {
+    font-size: 0.9rem !important;
+    font-weight: 700 !important;
+}
+
+/* ====================================================
+   GRID LAYOUT FOR CONCEPT SECTIONS
+   ==================================================== */
+
+.concept-grid-compact {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) !important;
+    gap: 16px !important;
+    margin-top: 20px !important;
+}
+
+/* Responsive Grid */
+@media (max-width: 1200px) {
+    .concept-grid-compact {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .concept-grid-compact {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)) !important;
+        gap: 12px !important;
+    }
+
+    .concept-card-unity {
+        height: 160px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .concept-grid-compact {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+}

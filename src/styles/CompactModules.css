@@ -1,0 +1,204 @@
+/* ====================================================
+   COMPACT MODULE CAROUSEL - SOLID DARK CARDS
+   ==================================================== */
+
+/* Carousel Section - Clean & Minimal */
+.module-carousel-section {
+    padding: 40px 0 !important;
+    background: transparent !important;
+    margin: 20px 0 !important;
+}
+
+.carousel-title {
+    font-size: 1.4rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    /* WHITE TEXT */
+    margin-bottom: 8px !important;
+}
+
+.carousel-subtitle {
+    font-size: 0.9rem !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    /* LIGHT TEXT */
+    margin-bottom: 24px !important;
+}
+
+/* Horizontal Scroll Container */
+.module-carousel-container {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 10px 0 !important;
+    scroll-behavior: smooth !important;
+    -webkit-overflow-scrolling: touch !important;
+}
+
+.module-carousel-container::-webkit-scrollbar {
+    height: 4px !important;
+}
+
+.module-carousel-container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05) !important;
+}
+
+.module-carousel-container::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2) !important;
+    border-radius: 4px !important;
+}
+
+.module-carousel-track {
+    display: flex !important;
+    gap: 16px !important;
+    padding-bottom: 10px !important;
+}
+
+/* ====================================================
+   COMPACT MODULE CARDS - SOLID DARK UNIFORM
+   ==================================================== */
+
+.module-card-compact {
+    /* FIXED SMALL SIZE */
+    min-width: 200px !important;
+    max-width: 200px !important;
+    height: 120px !important;
+
+    /* Layout */
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+
+    /* SOLID DARK BACKGROUND - HIGH CONTRAST */
+    background: #1a1a1f !important;
+    /* SOLID DARK GRAY */
+    border: 2px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 12px !important;
+    padding: 12px !important;
+
+    /* Interaction */
+    cursor: pointer !important;
+    transition: all 0.3s ease !important;
+
+    /* Prevent overflow */
+    overflow: hidden !important;
+}
+
+.module-card-compact:hover {
+    background: #2a2a2f !important;
+    /* SOLID LIGHTER ON HOVER */
+    transform: scale(1.05) !important;
+    border-color: rgba(123, 66, 245, 0.6) !important;
+    box-shadow: 0 8px 20px rgba(123, 66, 245, 0.3) !important;
+}
+
+.module-card-compact:active {
+    transform: scale(1.02) !important;
+    box-shadow: 0 4px 12px rgba(123, 66, 245, 0.2) !important;
+}
+
+/* Card Header - Minimal */
+.module-card-header {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-bottom: 8px !important;
+}
+
+.module-category-badge {
+    font-size: 0.65rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #9d5cff !important;
+    background: rgba(123, 66, 245, 0.2) !important;
+    padding: 2px 8px !important;
+    border-radius: 8px !important;
+}
+
+.module-rating-small {
+    display: flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    color: #fbbf24 !important;
+}
+
+/* Card Title - HIGH CONTRAST WHITE */
+.module-card-title {
+    font-size: 0.95rem !important;
+    font-weight: 700 !important;
+    color: #ffffff !important;
+    /* WHITE TEXT */
+    margin-bottom: 4px !important;
+
+    /* Single line truncate */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+}
+
+/* Card Subtitle - Hidden for compact view */
+.module-card-subtitle {
+    display: none !important;
+}
+
+/* Card Footer - Minimal */
+.module-card-footer {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    margin-top: auto !important;
+}
+
+.module-teacher-name {
+    font-size: 0.7rem !important;
+    color: rgba(255, 255, 255, 0.6) !important;
+    /* LIGHT TEXT */
+    font-weight: 500 !important;
+
+    /* Truncate if too long */
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    max-width: 120px !important;
+}
+
+.module-arrow {
+    color: #7b42f5 !important;
+    opacity: 0.6 !important;
+    transition: all 0.3s !important;
+    flex-shrink: 0 !important;
+}
+
+.module-card-compact:hover .module-arrow {
+    opacity: 1 !important;
+    transform: translateX(3px) !important;
+}
+
+/* ====================================================
+   RESPONSIVE - MAINTAIN COMPACT SIZE
+   ==================================================== */
+
+@media (max-width: 768px) {
+    .module-card-compact {
+        min-width: 180px !important;
+        max-width: 180px !important;
+        height: 110px !important;
+    }
+
+    .carousel-title {
+        font-size: 1.2rem !important;
+    }
+
+    .module-carousel-section {
+        padding: 30px 0 !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .module-card-compact {
+        min-width: 160px !important;
+        max-width: 160px !important;
+        height: 100px !important;
+    }
+}

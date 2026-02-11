@@ -1,0 +1,297 @@
+/* ====================================================
+   PROFILE PAGE - SOLID DARK BACKGROUND (HIGH CONTRAST)
+   ==================================================== */
+
+.profile-page-solid {
+    min-height: 100vh;
+    background: #0a0a0d;
+    /* SOLID dark background */
+    padding: 100px 5% 60px;
+    position: relative;
+}
+
+.profile-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #1a1a1f;
+    /* SOLID semi-dark background */
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+}
+
+/* ====================================================
+   CLOSE BUTTON - HIGH VISIBILITY
+   ==================================================== */
+
+.profile-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: #2a2a2f;
+    /* SOLID background */
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s;
+    z-index: 10;
+}
+
+.profile-close-btn:hover {
+    background: #3a3a3f;
+    border-color: #ef4444;
+    color: #ef4444;
+    transform: scale(1.1);
+}
+
+/* ====================================================
+   PROFILE HEADER - SOLID & CLEAR
+   ==================================================== */
+
+.profile-header-solid {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    margin-bottom: 30px;
+}
+
+.profile-avatar-large {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #7b42f5 0%, #9d5cff 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(123, 66, 245, 0.4);
+}
+
+.profile-user-name {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* HIGH CONTRAST white */
+    margin-bottom: 8px;
+}
+
+.profile-user-email {
+    font-size: 1rem;
+    color: #b3b3b3;
+    /* HIGH CONTRAST light gray */
+    margin-bottom: 16px;
+}
+
+.profile-role-badge {
+    display: inline-block;
+    padding: 8px 20px;
+    background: #7b42f5;
+    /* SOLID purple */
+    color: #fff;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+/* ====================================================
+   PROFILE STATS GRID - CLICKABLE MODULES
+   ==================================================== */
+
+.profile-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    margin-bottom: 30px;
+}
+
+.profile-module-card {
+    background: #2a2a2f;
+    /* SOLID dark background */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+}
+
+.profile-module-card:hover {
+    background: #3a3a3f;
+    /* SOLID lighter on hover */
+    border-color: var(--module-color);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+}
+
+.profile-module-card:active {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.module-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--module-color);
+    flex-shrink: 0;
+}
+
+.module-info {
+    flex: 1;
+}
+
+.module-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #ffffff;
+    /* HIGH CONTRAST */
+    margin-bottom: 4px;
+}
+
+.module-label {
+    font-size: 0.85rem;
+    color: #b3b3b3;
+    /* HIGH CONTRAST */
+    font-weight: 500;
+}
+
+.module-arrow {
+    color: rgba(255, 255, 255, 0.3);
+    transition: all 0.3s;
+}
+
+.profile-module-card:hover .module-arrow {
+    color: var(--module-color);
+    transform: translateX(4px);
+}
+
+/* ====================================================
+   ACTION BUTTONS - SOLID & CLICKABLE
+   ==================================================== */
+
+.profile-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.profile-action-btn {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: #2a2a2f;
+    /* SOLID background */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #ffffff;
+    /* HIGH CONTRAST */
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: 100%;
+}
+
+.profile-action-btn:hover {
+    background: #3a3a3f;
+    border-color: #7b42f5;
+    transform: translateX(4px);
+}
+
+.profile-action-btn:active {
+    transform: translateX(2px);
+}
+
+.profile-action-btn svg {
+    color: #7b42f5;
+    flex-shrink: 0;
+}
+
+.signout-btn:hover {
+    border-color: #ef4444;
+}
+
+.signout-btn:hover svg {
+    color: #ef4444;
+}
+
+/* ====================================================
+   RESPONSIVE - MOBILE & TABLET
+   ==================================================== */
+
+@media (max-width: 768px) {
+    .profile-page-solid {
+        padding: 80px 0 0;
+    }
+
+    .profile-container {
+        max-width: 100%;
+        border-radius: 20px 20px 0 0;
+        min-height: calc(100vh - 80px);
+        padding: 30px 24px;
+    }
+
+    .profile-close-btn {
+        top: 100px;
+        right: 24px;
+    }
+
+    .profile-stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-user-name {
+        font-size: 1.6rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .profile-container {
+        padding: 24px 20px;
+    }
+
+    .profile-avatar-large {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-avatar-large svg {
+        width: 36px;
+        height: 36px;
+    }
+
+    .module-value {
+        font-size: 1.3rem;
+    }
+
+    .module-label {
+        font-size: 0.8rem;
+    }
+}
+
+/* ====================================================
+   DESKTOP - CENTERED PANEL
+   ==================================================== */
+
+@media (min-width: 1024px) {
+    .profile-container {
+        margin-top: 20px;
+    }
+}

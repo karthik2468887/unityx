@@ -1,0 +1,170 @@
+.concept-card-unity {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 100%;
+    /* 3D shadow */
+    box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.3),
+        inset 0 1px 1px rgba(255, 255, 255, 0.05);
+}
+
+.concept-card-unity:hover {
+    transform: translateY(-12px) scale(1.02);
+    border-color: rgba(123, 66, 245, 0.4);
+    background: rgba(255, 255, 255, 0.05);
+    box-shadow:
+        0 30px 60px rgba(0, 0, 0, 0.5),
+        0 0 30px rgba(123, 66, 245, 0.2);
+}
+
+.card-image-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.card-image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.8s ease;
+}
+
+.concept-card-unity:hover .card-image-box img {
+    transform: scale(1.05);
+}
+
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(45, 27, 78, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.concept-card-unity:hover .card-overlay {
+    opacity: 1;
+}
+
+.play-icon-mini {
+    width: 40px;
+    /* Reduced from 50 */
+    height: 40px;
+    /* Reduced from 50 */
+    background: var(--background);
+    color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+}
+
+.concept-card-unity:hover .play-icon-mini {
+    transform: scale(1);
+}
+
+.card-content-unity {
+    padding: 16px;
+    /* Reduced from 24 */
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.card-title-unity {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #fff;
+    margin-bottom: 6px;
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.card-mentor-unity {
+    font-size: 0.75rem;
+    /* Reduced from 0.85 */
+    color: var(--text-muted);
+    margin-bottom: 12px;
+}
+
+.card-rating-unity {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 12px;
+}
+
+.rating-value {
+    font-weight: 600;
+    color: #b4690e;
+    font-size: 0.8rem;
+    /* Reduced from 0.9 */
+}
+
+.card-meta-unity {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 12px;
+    border-top: 1px solid rgba(45, 27, 78, 0.05);
+}
+
+.duration {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 0.75rem;
+    /* Reduced from 0.8 */
+    color: var(--text-dim);
+}
+
+.price-tag-unity {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #b1a0e8;
+}
+
+/* BESTSELLER BADGE - Positioned on IMAGE only, never overlaps title */
+.badge-unity {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    padding: 5px 12px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    border-radius: 6px;
+    z-index: 10;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    background: #facc15;
+    color: #000000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.bestseller {
+    background: var(--lavender);
+    color: var(--primary);
+}
