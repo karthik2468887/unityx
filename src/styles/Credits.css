@@ -1,4 +1,4 @@
-.credits-unity {
+.credits-FyuGen {
     position: relative;
     background: #020205;
     min-height: 100vh;
@@ -8,7 +8,7 @@
 }
 
 /* Luxury Vertical Plates for Credits Background */
-.credits-unity::before {
+.credits-FyuGen::before {
     content: '';
     position: absolute;
     top: 0;

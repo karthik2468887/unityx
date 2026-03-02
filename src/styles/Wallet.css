@@ -1,4 +1,4 @@
-.wallet-unity {
+.wallet-FyuGen {
     position: relative;
     background: #020205;
     /* Consistent deep black base */
@@ -8,7 +8,7 @@
 }
 
 /* High-Contrast Industrial Metallic Plates */
-.wallet-unity::before {
+.wallet-FyuGen::before {
     content: '';
     position: absolute;
     top: 0;
@@ -49,7 +49,7 @@
     align-items: flex-start;
 }
 
-.wallet-unity h2 {
+.wallet-FyuGen h2 {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 32px;
@@ -58,7 +58,7 @@
 }
 
 /* --- BALANCE SECTION --- */
-.balance-card-unity {
+.balance-card-FyuGen {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -71,7 +71,7 @@
     transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.balance-card-unity:hover {
+.balance-card-FyuGen:hover {
     transform: translateY(-8px);
     border-color: rgba(123, 66, 245, 0.3);
 }
@@ -86,7 +86,7 @@
     gap: 8px;
 }
 
-.balance-value-unity {
+.balance-value-FyuGen {
     font-size: 4.5rem;
     font-weight: 800;
     margin-bottom: 48px;
@@ -128,13 +128,13 @@
 }
 
 /* --- TRANSACTION HISTORY --- */
-.tx-list-unity {
+.tx-list-FyuGen {
     display: flex;
     flex-direction: column;
     gap: 12px;
 }
 
-.tx-item-unity {
+.tx-item-FyuGen {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -150,7 +150,7 @@
         inset 0 1px 1px rgba(255, 255, 255, 0.02);
 }
 
-.tx-item-unity:hover {
+.tx-item-FyuGen:hover {
     background: rgba(255, 255, 255, 0.05);
     border-color: rgba(255, 255, 255, 0.15);
     transform: translateY(-4px) scale(1.01);
@@ -193,11 +193,37 @@
         gap: 48px;
     }
 
-    .balance-card-unity {
+    .balance-card-FyuGen {
         padding: 32px;
     }
 
-    .balance-value-unity {
+    .balance-value-FyuGen {
         font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .wallet-FyuGen {
+        padding: 80px 0 40px;
+    }
+
+    .balance-value-FyuGen {
+        font-size: 2.5rem;
+    }
+
+    .balance-card-FyuGen {
+        padding: 24px;
+    }
+
+    .tx-item-FyuGen {
+        padding: 16px 20px;
+    }
+
+    .fund-presets {
+        flex-wrap: wrap;
+    }
+
+    .preset-chip {
+        flex: 1 1 45%;
     }
 }

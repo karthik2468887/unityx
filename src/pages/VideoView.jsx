@@ -32,11 +32,20 @@ const VideoView = () => {
             <main className="view-main content-max-width">
                 {/* TEACHER DEMO SECTION */}
                 <section className="demo-section">
-                    <div className="demo-player-container">
-                        <div className="demo-placeholder-box">
-                            <Play size={64} className="play-pulse" />
-                            <div className="demo-label">Teacher Demo Implementation</div>
-                        </div>
+                    <div className="demo-player-container" onClick={() => navigate(`/learn/${concept.id}`)} style={{ cursor: 'pointer' }}>
+                        {concept.videoUrl ? (
+                            <video
+                                src={concept.videoUrl}
+                                className="demo-placeholder-box"
+                                style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                                controls
+                            />
+                        ) : (
+                            <div className="demo-placeholder-box">
+                                <Play size={64} className="play-pulse" />
+                                <div className="demo-label">Teacher Demo Implementation</div>
+                            </div>
+                        )}
                     </div>
                     <div className="demo-info">
                         <h2>Demo Overview</h2>
@@ -106,7 +115,7 @@ const VideoView = () => {
                     </div>
 
                     <div className="concept-video-layout">
-                        <div className="video-card-main">
+                        <div className="video-card-main" onClick={() => navigate(`/learn/${concept.id}`)} style={{ cursor: 'pointer' }}>
                             <div className="video-thumb-large">
                                 <img src={`https://picsum.photos/seed/${concept.id}/800/450`} alt="Concept Thumbnail" />
                                 <div className="unlock-overlay">

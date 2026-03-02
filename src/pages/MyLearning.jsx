@@ -14,8 +14,8 @@ const MyLearning = () => {
     const purchasedConcepts = concepts.filter(c => isConceptPurchased(c.id));
 
     return (
-        <div className="my-learning-unity">
-            <div className="player-header-unity">
+        <div className="my-learning-FyuGen">
+            <div className="player-header-FyuGen">
                 <div className="content-max-width">
                     <motion.h1
                         initial={{ opacity: 0, x: -20 }}
@@ -29,7 +29,7 @@ const MyLearning = () => {
             </div>
 
             <div className="content-max-width my-learning-body">
-                <div className="learning-tabs-unity">
+                <div className="learning-tabs-FyuGen">
                     <button
                         className={activeTab === 'purchased' ? 'active' : ''}
                         onClick={() => setActiveTab('purchased')}
@@ -61,7 +61,7 @@ const MyLearning = () => {
                 >
                     {activeTab === 'purchased' && (
                         purchasedConcepts.length > 0 ? (
-                            <div className="concepts-grid-unity">
+                            <div className="concepts-grid-FyuGen">
                                 {purchasedConcepts.map(concept => (
                                     <ConceptCard key={concept.id} concept={concept} />
                                 ))}
@@ -100,3 +100,4 @@ const History = ({ size, color, style }) => (
 );
 
 export default MyLearning;
+

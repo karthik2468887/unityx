@@ -2,7 +2,7 @@ import { useState, useRef, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useContent } from "../context/ContentContext";
 import { useAuth } from "../context/AuthContext";
-import FirebaseService from "../services/FirebaseService";
+import StorageService from "../services/StorageService";
 import {
     Upload,
     ChevronLeft,
@@ -58,8 +58,8 @@ const MentorUpload = () => {
         setUploadProgress(0);
 
         try {
-            // 🔥 REAL FIREBASE UPLOAD
-            const videoUrl = await FirebaseService.uploadVideo(
+            // Supabase Upload
+            const videoUrl = await StorageService.uploadVideo(
                 formData.fullVideo,
                 "videos",
                 (progress) => setUploadProgress(progress)
@@ -71,21 +71,21 @@ const MentorUpload = () => {
                 price: formData.price,
                 videoUrl,
                 mentorId: user?.uid || "demo",
-                mentorName: user?.name || "Unity Mentor",
+                mentorName: user?.name || "FyuGen Mentor",
                 timestamp: Date.now(),
                 uploadId: `UP-${Math.floor(Math.random() * 10000)
                     .toString()
                     .padStart(4, "0")}`,
             };
 
-            publishDirectly(uploadData);
+            await publishDirectly(uploadData);
 
             setUploadedRecord(uploadData);
             setSubmitted(true);
             setIsUploading(false);
         } catch (error) {
             console.error("Upload failed:", error);
-            alert("Upload failed. Please check Firebase rules.");
+            alert("Upload failed. Please check Supabase storage rules.");
             setIsUploading(false);
         }
     };
@@ -218,3 +218,4 @@ const MentorUpload = () => {
 };
 
 export default MentorUpload;
+

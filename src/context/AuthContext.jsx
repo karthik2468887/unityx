@@ -1,7 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
-import { onAuthStateChanged, signOut } from "firebase/auth";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "../services/firebase";
+import { supabase } from "../lib/supabase";
 
 const AuthContext = createContext();
 
@@ -10,29 +8,59 @@ export const AuthProvider = ({ children }) => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const unsub = onAuthStateChanged(auth, async (firebaseUser) => {
-      if (firebaseUser) {
-        const snap = await getDoc(doc(db, "users", firebaseUser.uid));
-        const profile = snap.exists() ? snap.data() : {};
+    const fetchUser = async (sessionUser) => {
+      try {
+        if (sessionUser) {
+          const { data: profile, error } = await supabase
+            .from("users")
+            .select("*")
+            .eq("id", sessionUser.id)
+            .single();
 
-        setUser({
-          uid: firebaseUser.uid,
-          email: firebaseUser.email,
-          role: profile.role || "student",
-          name: profile.name || ""
-        });
-      } else {
+          if (error) {
+            console.warn("Could not fetch user profile (maybe table/row missing):", error);
+          }
+
+          setUser({
+            uid: sessionUser.id,
+            email: sessionUser.email,
+            role: profile?.role || sessionUser.user_metadata?.role || "student",
+            name: profile?.name || sessionUser.user_metadata?.name || ""
+          });
+        } else {
+          setUser(null);
+        }
+      } catch (err) {
+        console.error("Auth fetchUser error:", err);
         setUser(null);
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
+    };
+
+    // Check active sessions
+    supabase.auth.getSession()
+      .then(({ data: { session } }) => {
+        fetchUser(session?.user);
+      })
+      .catch((err) => {
+        console.error("Failed to get Supabase session:", err);
+        setLoading(false);
+      });
+
+    // Listen for changes
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      fetchUser(session?.user);
     });
 
-    return unsub;
+    return () => subscription.unsubscribe();
   }, []);
 
   const logout = async () => {
-    await signOut(auth);
-    setUser(null);
+    await supabase.auth.signOut();
+    // setUser(null) is handled by onAuthStateChange event 'SIGNED_OUT' passing session=null
   };
 
   return (

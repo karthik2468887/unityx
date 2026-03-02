@@ -22,7 +22,7 @@ const Wallet = () => {
     };
 
     return (
-        <div className="wallet-unity">
+        <div className="wallet-FyuGen">
             <div className="content-max-width">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
@@ -31,14 +31,14 @@ const Wallet = () => {
                     className="wallet-grid"
                 >
                     {/* Left: Balance & Top up */}
-                    <div className="balance-section-unity">
+                    <div className="balance-section-FyuGen">
                         <h2>My Wallet</h2>
-                        <div className="balance-card-unity">
+                        <div className="balance-card-FyuGen">
                             <div className="balance-label">
                                 <Shield size={18} color="#4f46e5" />
                                 <span>Secured Balance</span>
                             </div>
-                            <div className="balance-value-unity">₹{balance?.toLocaleString()}</div>
+                            <div className="balance-value-FyuGen">₹{balance?.toLocaleString()}</div>
 
                             <h3 className="add-funds-title">Precision Recharge</h3>
                             <div className="fund-presets">
@@ -61,20 +61,20 @@ const Wallet = () => {
 
                             <div style={{ marginTop: '24px', display: 'flex', alignItems: 'center', gap: '8px', color: '#64748b', fontSize: '0.85rem' }}>
                                 <CreditCard size={14} />
-                                <span>Secured by Unity Payment Gateway</span>
+                                <span>Secured by FyuGen Payment Gateway</span>
                             </div>
                         </div>
                     </div>
 
                     {/* Right: History */}
-                    <div className="history-section-unity">
+                    <div className="history-section-FyuGen">
                         <h2>Transaction History</h2>
-                        <div className="tx-list-unity">
+                        <div className="tx-list-FyuGen">
                             {transactions.length > 0 ? (
                                 transactions.slice().reverse().map((tx, idx) => (
                                     <motion.div
                                         key={tx.id}
-                                        className="tx-item-unity"
+                                        className="tx-item-FyuGen"
                                         initial={{ opacity: 0, x: 20 }}
                                         animate={{ opacity: 1, x: 0 }}
                                         transition={{ delay: idx * 0.05 }}
@@ -111,7 +111,7 @@ const Wallet = () => {
                                     border: '1px dashed rgba(255,255,255,0.1)'
                                 }}>
                                     <History size={48} color="#1e293b" style={{ marginBottom: '16px' }} />
-                                    <p className="empty-msg" style={{ color: '#64748b' }}>No transaction records found in your Unity history.</p>
+                                    <p className="empty-msg" style={{ color: '#64748b' }}>No transaction records found in your FyuGen history.</p>
                                 </div>
                             )}
                         </div>
@@ -123,3 +123,4 @@ const Wallet = () => {
 };
 
 export default Wallet;
+

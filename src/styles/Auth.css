@@ -180,3 +180,34 @@
     color: white;
     box-shadow: 0 0 15px var(--role-color);
 }
+
+@media (max-width: 480px) {
+    .auth-container {
+        padding: 1rem;
+    }
+
+    .auth-card {
+        padding: 2rem 1.25rem;
+        border: none;
+        background: transparent;
+        box-shadow: none;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+    }
+
+    .role-grid {
+        gap: 0.5rem;
+    }
+
+    .role-choice {
+        padding: 0.75rem 0.25rem;
+    }
+
+    .role-choice span {
+        font-size: 0.6rem;
+    }
+
+    .auth-header h1 {
+        font-size: 1.5rem;
+    }
+}

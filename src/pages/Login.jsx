@@ -51,7 +51,7 @@ const Login = () => {
   };
 
   return (
-    <div className="login-unity">
+    <div className="login-FyuGen">
       <div className="login-wrapper">
         <AnimatePresence mode="wait">
           <motion.div
@@ -65,7 +65,7 @@ const Login = () => {
             {/* HEADER */}
             <div className="login-logo">
               <Zap size={54} className="logo-glow" />
-              <h2>Unity</h2>
+              <h2>FyuGen</h2>
               <p>
                 {isLogin
                   ? "Sign in to continue learning"

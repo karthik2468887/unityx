@@ -9,7 +9,6 @@ import {
     PlayCircle, Award, BookOpen, Globe, Search, User, Menu, X
 } from 'lucide-react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { MODULES } from '../data/mockData';
 import vortexImg from '../assets/vortex_hero_final.png';
 import heroSticker from '../assets/hero_sticker.png';
 import '../styles/Home.css';
@@ -53,7 +52,7 @@ const Home = () => {
     };
 
     return (
-        <div className="home-unity" ref={containerRef}>
+        <div className="home-FyuGen" ref={containerRef}>
             {/* Nav Header */}
             <header className="nav-header-vortex">
                 <div className="logo-vortex" onClick={() => navigate('/')} style={{ cursor: 'pointer' }}>
@@ -95,7 +94,7 @@ const Home = () => {
 
             {/* Vortex Hero Section with Parallax */}
             <motion.section
-                className="hero-unity"
+                className="hero-FyuGen"
                 style={{
                     y: heroY,
                     opacity: heroOpacity
@@ -130,7 +129,7 @@ const Home = () => {
                                 y: { duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }
                             }}
                         >
-                            Unity is the best platform for <br />
+                            FyuGen is the best platform for <br />
                             learning and mastering your skills.
                         </motion.p>
 
@@ -159,7 +158,7 @@ const Home = () => {
                         <div className="vortex-container">
                             <img
                                 src={vortexImg}
-                                alt="Unity Vortex"
+                                alt="FyuGen Vortex"
                                 className="vortex-image"
                             />
                         </div>
@@ -181,7 +180,7 @@ const Home = () => {
 
                     <div className="module-carousel-container">
                         <div className="module-carousel-track">
-                            {MODULES.map((module, index) => (
+                            {modules.map((module, index) => (
                                 <motion.div
                                     key={module.id}
                                     className="module-card-compact"
@@ -228,12 +227,12 @@ const Home = () => {
                 >
                     Browse Top Essential <br /> Career Courses
                 </motion.h2>
-                <div className="categories-grid-unity">
+                <div className="categories-grid-FyuGen">
                     {subjects.slice(0, 4).map((sub, index) => {
                         return (
                             <motion.div
                                 key={sub.id}
-                                className="category-item-unity"
+                                className="category-item-FyuGen"
                                 onClick={() => setSelectedSubject(sub)}
                                 initial={{ opacity: 0, y: 30, scale: 0.9 }}
                                 whileInView={{ opacity: 1, y: 0, scale: 1 }}
@@ -296,11 +295,11 @@ const Home = () => {
                 {/* Categories Grid */}
                 <section className="categories-showcase">
                     <h2 className="section-title">Top Categories</h2>
-                    <div className="categories-grid-unity">
+                    <div className="categories-grid-FyuGen">
                         {subjects.map(sub => (
                             <div
                                 key={sub.id}
-                                className="category-item-unity"
+                                className="category-item-FyuGen"
                                 onClick={() => navigate(`/category/${sub.id}`)}
                             >
                                 <div className="category-icon-box">
@@ -337,13 +336,13 @@ const Home = () => {
             </div>
 
             {/* Footer Mock */}
-            <footer className="footer-unity">
+            <footer className="footer-FyuGen">
                 <div className="content-max-width footer-top">
                     {/* ... (existing footer content) ... */}
                     <div className="footer-links">
                         <div className="link-group">
-                            <span>Unity for Business</span>
-                            <span>Teach on Unity</span>
+                            <span>FyuGen for Business</span>
+                            <span>Teach on FyuGen</span>
                             <span>Get the app</span>
                         </div>
                         <div className="link-group">
@@ -366,9 +365,9 @@ const Home = () => {
                 <div className="content-max-width footer-bottom">
                     <div className="footer-logo">
                         <Zap fill="white" color="white" size={24} />
-                        <span className="logo-text">Unity</span>
+                        <span className="logo-text">FyuGen</span>
                     </div>
-                    <span className="copyright">© 2026 Unity, Inc.</span>
+                    <span className="copyright">© 2026 FyuGen, Inc.</span>
                 </div>
             </footer>
 
@@ -379,3 +378,4 @@ const Home = () => {
 };
 
 export default Home;
+

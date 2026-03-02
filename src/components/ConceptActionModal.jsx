@@ -29,30 +29,30 @@ const ConceptActionModal = ({ isOpen, onClose, concept }) => {
     return (
         <AnimatePresence>
             {isOpen && (
-                <div className="modal-overlay-unity">
+                <div className="modal-overlay-FyuGen">
                     <motion.div
-                        className="modal-backdrop-unity"
+                        className="modal-backdrop-FyuGen"
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                         exit={{ opacity: 0 }}
                         onClick={onClose}
                     />
                     <motion.div
-                        className="modal-container-unity"
+                        className="modal-container-FyuGen"
                         initial={{ scale: 0.9, opacity: 0, y: 20 }}
                         animate={{ scale: 1, opacity: 1, y: 0 }}
                         exit={{ scale: 0.9, opacity: 0, y: 20 }}
                         transition={{ type: "spring", damping: 25, stiffness: 300 }}
                     >
-                        <button className="modal-close-btn-unity" onClick={onClose}>
+                        <button className="modal-close-btn-FyuGen" onClick={onClose}>
                             <X size={24} />
                         </button>
 
-                        <div className="modal-banner-unity">
+                        <div className="modal-banner-FyuGen">
                             <img src={thumbnail} alt={concept.concept} />
-                            <div className="banner-overlay-unity">
+                            <div className="banner-overlay-FyuGen">
                                 <motion.button
-                                    className="play-pulse-btn-unity"
+                                    className="play-pulse-btn-FyuGen"
                                     whileHover={{ scale: 1.1 }}
                                     whileTap={{ scale: 0.9 }}
                                     onClick={handleStartLearning}
@@ -62,9 +62,9 @@ const ConceptActionModal = ({ isOpen, onClose, concept }) => {
                             </div>
                         </div>
 
-                        <div className="modal-body-unity">
-                            <div className="modal-header-info-unity">
-                                <div className="modal-top-meta-unity">
+                        <div className="modal-body-FyuGen">
+                            <div className="modal-header-info-FyuGen">
+                                <div className="modal-top-meta-FyuGen">
                                     <span className="modal-badge-saas">Premium Content</span>
                                     <div className="modal-rating-saas">
                                         <Star size={14} fill="#fbbf24" color="#fbbf24" />
@@ -72,15 +72,15 @@ const ConceptActionModal = ({ isOpen, onClose, concept }) => {
                                         <span className="reviews-muted">({reviews})</span>
                                     </div>
                                 </div>
-                                <h2 className="modal-title-unity">{concept.concept}</h2>
-                                <p className="modal-sub-unity">By <span className="mentor-name-saas">{concept.mentorName || 'Top Mentor'}</span> • {duration}</p>
+                                <h2 className="modal-title-FyuGen">{concept.concept}</h2>
+                                <p className="modal-sub-FyuGen">By <span className="mentor-name-saas">{concept.mentorName || 'Top Mentor'}</span> • {duration}</p>
                             </div>
 
-                            <p className="modal-description-unity">
+                            <p className="modal-description-FyuGen">
                                 Master this concept with our deep-dive micro-module. Designed for retention and quick application in real-world scenarios.
                             </p>
 
-                            <div className="modal-actions-grid-unity">
+                            <div className="modal-actions-grid-FyuGen">
                                 <button className="action-btn-saas primary" onClick={handleStartLearning}>
                                     <Play size={18} fill="currentColor" />
                                     <span>Start Learning</span>
@@ -107,3 +107,4 @@ const ConceptActionModal = ({ isOpen, onClose, concept }) => {
 };
 
 export default ConceptActionModal;
+

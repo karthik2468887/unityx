@@ -79,8 +79,8 @@ const Profile = () => {
                     <div className="profile-avatar-large">
                         <User size={48} />
                     </div>
-                    <h2 className="profile-user-name">{user?.name || 'Unity Learner'}</h2>
-                    <p className="profile-user-email">{user?.email || 'learner@unity.com'}</p>
+                    <h2 className="profile-user-name">{user?.name || 'FyuGen Learner'}</h2>
+                    <p className="profile-user-email">{user?.email || 'learner@FyuGen.com'}</p>
                     <span className="profile-role-badge">{user?.role || 'Student'}</span>
                 </div>
 
@@ -128,3 +128,4 @@ const Profile = () => {
 };
 
 export default Profile;
+

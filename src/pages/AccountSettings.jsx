@@ -121,7 +121,7 @@ const AccountSettings = () => {
                 </main>
 
                 <footer className="settings-footer">
-                    <p>© 2026 Unity Precision Learning • Secure Session</p>
+                    <p>© 2026 FyuGen Precision Learning • Secure Session</p>
                 </footer>
             </div>
         </div>
@@ -136,3 +136,4 @@ const SettingsIcon = ({ size }) => (
 );
 
 export default AccountSettings;
+

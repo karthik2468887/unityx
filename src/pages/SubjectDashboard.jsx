@@ -59,7 +59,7 @@ const SubjectDashboard = () => {
             <aside className={`dashboard-sidebar ${isMobileMenuOpen ? 'show' : ''}`}>
                 <div className="sidebar-brand">
                     <div className="brand-dot"></div>
-                    <span className="brand-text">Unity</span>
+                    <span className="brand-text">FyuGen</span>
                     <button className="mobile-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
                         <ChevronRight size={24} />
                     </button>
@@ -248,3 +248,4 @@ const SubjectDashboard = () => {
 };
 
 export default SubjectDashboard;
+

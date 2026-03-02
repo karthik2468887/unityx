@@ -43,7 +43,7 @@ const Contact = () => {
                     email: formData.email,
                     message: formData.message,
                     to_email: 'karthikkumarkadavala4@gmail.com',
-                    subject: `New Contact from ${formData.name} - Unity Learning`
+                    subject: `New Contact from ${formData.name} - FyuGen Learning`
                 })
             });
 
@@ -217,3 +217,4 @@ const Contact = () => {
 };
 
 export default Contact;
+

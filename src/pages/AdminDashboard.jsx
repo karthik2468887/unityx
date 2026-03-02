@@ -35,7 +35,7 @@ const AdminDashboard = () => {
     };
 
     return (
-        <div className="admin-unity">
+        <div className="admin-FyuGen">
             <div className="admin-header-premium">
                 <div className="content-max-width">
                     <motion.h1
@@ -55,7 +55,7 @@ const AdminDashboard = () => {
                 </div>
             </div>
 
-            <div className="content-max-width admin-body-unity">
+            <div className="content-max-width admin-body-FyuGen">
                 {/* Admin Tabs */}
                 <div className="admin-tabs">
                     <button
@@ -127,12 +127,12 @@ const AdminDashboard = () => {
                         </div>
 
                         <motion.div
-                            className="review-table-unity"
+                            className="review-table-FyuGen"
                             initial={{ opacity: 0 }}
                             animate={{ opacity: 1 }}
                             transition={{ duration: 0.8 }}
                         >
-                            <div className="table-header-unity">
+                            <div className="table-header-FyuGen">
                                 <span>Concept Details</span>
                                 <span>Mentor</span>
                                 <span>Subject</span>
@@ -185,7 +185,7 @@ const AdminDashboard = () => {
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
                     >
-                        <div className="table-header-unity">
+                        <div className="table-header-FyuGen">
                             <span>User</span>
                             <span>Email Identity</span>
                             <span>Level</span>
@@ -230,3 +230,4 @@ const AdminDashboard = () => {
 };
 
 export default AdminDashboard;
+

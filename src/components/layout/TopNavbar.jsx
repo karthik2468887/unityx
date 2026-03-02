@@ -26,7 +26,7 @@ const TopNavbar = () => {
                 {/* Left: Brand */}
                 <div className="nav-section-left">
                     <NavLink to="/" className="nav-logo-ethereal">
-                        <span className="logo-text-main">Unity</span>
+                        <span className="logo-text-main">FyuGen</span>
                     </NavLink>
                 </div>
 
@@ -79,7 +79,7 @@ const TopNavbar = () => {
                                 <div className="user-hero-mini">
                                     <div className="large-avatar"><User size={40} /></div>
                                     <div className="user-details">
-                                        <h4>{user?.displayName || 'Unity Learner'}</h4>
+                                        <h4>{user?.displayName || 'FyuGen Learner'}</h4>
                                         <p>{user?.email}</p>
                                     </div>
                                 </div>
@@ -168,3 +168,4 @@ const TopNavbar = () => {
 };
 
 export default TopNavbar;
+

@@ -129,7 +129,7 @@
 }
 
 /* --- PURCHASE CARD --- */
-.purchase-card-unity {
+.purchase-card-FyuGen {
     background: rgba(255, 255, 255, 0.03);
     backdrop-filter: blur(24px);
     border: 1px solid rgba(255, 255, 255, 0.1);
@@ -319,7 +319,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.mentor-header-unity {
+.mentor-header-FyuGen {
     display: flex;
     align-items: center;
     gap: 20px;
@@ -379,10 +379,40 @@
         gap: 48px;
     }
 
-    .purchase-card-unity {
+    .purchase-card-FyuGen {
         position: static;
         width: 100%;
         max-width: 600px;
         margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .detail-hero {
+        padding: 100px 20px 40px;
+    }
+
+    .detail-body {
+        padding: 40px 20px;
+    }
+
+    .detail-title {
+        font-size: 2rem;
+    }
+
+    .price-primary {
+        font-size: 2rem;
+    }
+
+    .purchase-content {
+        padding: 24px;
+    }
+
+    .learning-objective-box {
+        padding: 24px;
+    }
+
+    .mentor-stats {
+        grid-template-columns: 1fr;
     }
 }

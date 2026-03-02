@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { MODULES } from '../data/mockData';
+import { useContent } from '../context/ContentContext';
 import { ArrowLeft, BookOpen, Star, Clock } from 'lucide-react';
 import '../styles/Modules.css';
 
 const Modules = () => {
     const navigate = useNavigate();
+    const { modules } = useContent();
 
     const handleModuleClick = (moduleId) => {
         navigate(`/module/${moduleId}`);
@@ -25,7 +26,7 @@ const Modules = () => {
             {/* Modules Container */}
             <div className="modules-container">
                 <div className="modules-scroll">
-                    {MODULES.map((module) => (
+                    {modules.map((module) => (
                         <div
                             key={module.id}
                             className="module-card"

@@ -1,10 +1,10 @@
-.video-player-unity {
+.video-player-FyuGen {
     background: #0a0b14;
     min-height: 100vh;
     color: #f8fafc;
 }
 
-.player-header-unity {
+.player-header-FyuGen {
     height: 80px;
     position: sticky;
     top: 0;
@@ -14,7 +14,7 @@
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.player-nav-unity {
+.player-nav-FyuGen {
     height: 100%;
     display: flex;
     align-items: center;
@@ -318,6 +318,7 @@
     margin-bottom: 6px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }
@@ -359,5 +360,32 @@
 
     .player-main {
         padding: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .concept-main-title {
+        font-size: 1.5rem;
+    }
+
+    .content-info-card {
+        padding: 16px;
+    }
+
+    .info-main {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+
+    .player-tabs {
+        gap: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 4px;
+    }
+
+    .player-sidebar {
+        padding: 24px;
     }
 }

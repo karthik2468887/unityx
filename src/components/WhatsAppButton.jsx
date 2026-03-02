@@ -6,7 +6,7 @@ const WhatsAppButton = () => {
     // CONFIGURATION
     // Replace with the actual WhatsApp number (International format without +)
     const PHONE_NUMBER = '917036708735';
-    const PREFILLED_MESSAGE = "Hi, I need help with learning on Unity.";
+    const PREFILLED_MESSAGE = "Hi, I need help with learning on FyuGen.";
 
     const handleClick = () => {
         const url = `https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(PREFILLED_MESSAGE)}`;
@@ -59,3 +59,4 @@ const WhatsAppIcon = () => (
 );
 
 export default WhatsAppButton;
+

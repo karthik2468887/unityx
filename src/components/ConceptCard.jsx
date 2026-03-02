@@ -23,7 +23,7 @@ const ConceptCard = ({ concept, onClick }) => {
 
     return (
         <motion.div
-            className="concept-card-unity"
+            className="concept-card-FyuGen"
             whileHover={{ y: -5 }}
             onClick={onClick}
         >
@@ -33,14 +33,14 @@ const ConceptCard = ({ concept, onClick }) => {
                     <div className="play-icon-mini">▶</div>
                 </div>
                 {/* Badge positioned on image ONLY - never overlaps title */}
-                {rating > 4.7 && <div className="badge-unity bestseller">Bestseller</div>}
+                {rating > 4.7 && <div className="badge-FyuGen bestseller">Bestseller</div>}
             </div>
 
-            <div className="card-content-unity">
-                <h3 className="card-title-unity">{concept.concept}</h3>
-                <p className="card-mentor-unity">{concept.mentorName || 'Top Mentor'}</p>
+            <div className="card-content-FyuGen">
+                <h3 className="card-title-FyuGen">{concept.concept}</h3>
+                <p className="card-mentor-FyuGen">{concept.mentorName || 'Top Mentor'}</p>
 
-                <div className="card-rating-unity">
+                <div className="card-rating-FyuGen">
                     <span className="rating-value">{rating}</span>
                     <div className="stars-mini">
                         {[...Array(5)].map((_, i) => (
@@ -50,12 +50,12 @@ const ConceptCard = ({ concept, onClick }) => {
                     <span className="review-count">({reviews.toLocaleString()})</span>
                 </div>
 
-                <div className="card-meta-unity">
+                <div className="card-meta-FyuGen">
                     <span className="duration"><Clock size={12} /> {duration}</span>
                 </div>
 
-                <div className="card-price-unity">
-                    <span className="price-tag-unity">₹{concept.price}</span>
+                <div className="card-price-FyuGen">
+                    <span className="price-tag-FyuGen">₹{concept.price}</span>
                 </div>
 
                 {/* Badge moved to image-box above */}
@@ -65,3 +65,4 @@ const ConceptCard = ({ concept, onClick }) => {
 };
 
 export default ConceptCard;
+

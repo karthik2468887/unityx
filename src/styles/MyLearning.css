@@ -1,4 +1,4 @@
-.my-learning-unity {
+.my-learning-FyuGen {
     position: relative;
     background: #020205;
     /* Deep black base */
@@ -8,7 +8,7 @@
 }
 
 /* Luxury Vertical Plates for Learning Background */
-.my-learning-unity::before {
+.my-learning-FyuGen::before {
     content: '';
     position: absolute;
     top: 0;
@@ -28,13 +28,13 @@
     opacity: 0.8;
 }
 
-.player-header-unity,
+.player-header-FyuGen,
 .my-learning-body {
     position: relative;
     z-index: 10;
 }
 
-.player-header-unity {
+.player-header-FyuGen {
     padding-top: 100px;
     background: transparent;
 }
@@ -43,14 +43,14 @@
     padding: 60px 0 100px;
 }
 
-.learning-tabs-unity {
+.learning-tabs-FyuGen {
     display: flex;
     gap: 48px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     margin-bottom: 60px;
 }
 
-.learning-tabs-unity button {
+.learning-tabs-FyuGen button {
     padding-bottom: 20px;
     font-weight: 700;
     color: #94a3b8;
@@ -62,15 +62,15 @@
     transition: all 0.3s ease;
 }
 
-.learning-tabs-unity button:hover {
+.learning-tabs-FyuGen button:hover {
     color: #f8fafc;
 }
 
-.learning-tabs-unity button.active {
+.learning-tabs-FyuGen button.active {
     color: #4f46e5;
 }
 
-.learning-tabs-unity button.active::after {
+.learning-tabs-FyuGen button.active::after {
     content: '';
     position: absolute;
     bottom: -1px;
@@ -81,7 +81,7 @@
     border-radius: 10px 10px 0 0;
 }
 
-.concepts-grid-unity {
+.concepts-grid-FyuGen {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
     gap: 32px;
@@ -111,12 +111,12 @@
 }
 
 @media (max-width: 768px) {
-    .learning-tabs-unity {
+    .learning-tabs-FyuGen {
         gap: 24px;
         overflow-x: auto;
     }
 
-    .learning-tabs-unity button {
+    .learning-tabs-FyuGen button {
         font-size: 1rem;
         white-space: nowrap;
     }

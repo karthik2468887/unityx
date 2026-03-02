@@ -1,18 +1,19 @@
 import { createContext, useContext, useState, useEffect } from 'react';
 import NativeService from '../services/NativeService';
+import { supabase } from '../lib/supabase';
+import { useAuth } from './AuthContext';
 
 const WalletContext = createContext();
 
 export const WalletProvider = ({ children }) => {
+    const { user } = useAuth();
+
     const [balance, setBalance] = useState(() => {
         const saved = localStorage.getItem('wallet_balance');
         return saved !== null ? Number(saved) : 25;
     });
 
-    const [purchasedIds, setPurchasedIds] = useState(() => {
-        const saved = localStorage.getItem('purchased_concepts');
-        return saved ? JSON.parse(saved) : ['con1'];
-    });
+    const [purchasedIds, setPurchasedIds] = useState([]);
 
     const [transactions, setTransactions] = useState(() => {
         const saved = localStorage.getItem('wallet_transactions');
@@ -22,12 +23,25 @@ export const WalletProvider = ({ children }) => {
     });
 
     useEffect(() => {
-        localStorage.setItem('wallet_balance', balance);
-    }, [balance]);
+        if (user) {
+            const fetchPurchases = async () => {
+                const { data } = await supabase
+                    .from('purchases')
+                    .select('concept_id')
+                    .eq('user_id', user.uid);
+                if (data) {
+                    setPurchasedIds(data.map(p => p.concept_id));
+                }
+            };
+            fetchPurchases();
+        } else {
+            setPurchasedIds([]);
+        }
+    }, [user]);
 
     useEffect(() => {
-        localStorage.setItem('purchased_concepts', JSON.stringify(purchasedIds));
-    }, [purchasedIds]);
+        localStorage.setItem('wallet_balance', balance);
+    }, [balance]);
 
     useEffect(() => {
         localStorage.setItem('wallet_transactions', JSON.stringify(transactions));
@@ -44,33 +58,34 @@ export const WalletProvider = ({ children }) => {
         }]);
     };
 
-    /**
-     * Real UPI Payment Flow
-     */
+    const recordPurchase = async (concept) => {
+        if (user) {
+            await supabase.from('purchases').insert([{
+                user_id: user.uid,
+                concept_id: concept.id,
+                amount: concept.price
+            }]);
+        }
+        setPurchasedIds(prev => [...prev, concept.id]);
+        setTransactions(prev => [...prev, {
+            id: `tx${Date.now()}`,
+            type: 'debit',
+            amount: concept.price,
+            date: new Date().toLocaleDateString(),
+            conceptName: concept.concept || concept.name
+        }]);
+    };
+
     const purchaseConcept = async (concept, isUPI = false) => {
         if (isUPI) {
             await NativeService.triggerUPIIntent('merchant@upi', 'Micro Learning App', concept.price);
-            setPurchasedIds(prev => [...prev, concept.id]);
-            setTransactions(prev => [...prev, {
-                id: `tx${Date.now()}`,
-                type: 'debit',
-                amount: concept.price,
-                date: new Date().toLocaleDateString(),
-                conceptName: concept.concept || concept.name
-            }]);
+            await recordPurchase(concept);
             return true;
         }
 
         if (balance >= concept.price) {
             setBalance(prev => prev - concept.price);
-            setPurchasedIds(prev => [...prev, concept.id]);
-            setTransactions(prev => [...prev, {
-                id: `tx${Date.now()}`,
-                type: 'debit',
-                amount: concept.price,
-                date: new Date().toLocaleDateString(),
-                conceptName: concept.concept || concept.name
-            }]);
+            await recordPurchase(concept);
             return true;
         }
         return false;
@@ -85,5 +100,4 @@ export const WalletProvider = ({ children }) => {
     );
 };
 
-// eslint-disable-next-line react-refresh/only-export-components
 export const useWallet = () => useContext(WalletContext);

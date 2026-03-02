@@ -164,7 +164,7 @@
 }
 
 /* Vortex UI Specific Styles */
-.home-unity {
+.home-FyuGen {
     position: relative;
     /* Luxury Minimal Black Background */
     background: #020205;
@@ -174,7 +174,7 @@
 }
 
 /* High-Contrast Industrial Metallic Plates */
-.home-unity::before {
+.home-FyuGen::before {
     content: '';
     position: absolute;
     top: 0;
@@ -203,7 +203,7 @@
     opacity: 1;
 }
 
-.hero-unity {
+.hero-FyuGen {
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -568,15 +568,15 @@
     }
 }
 
-/* Category Grid Unity - Dark Theme */
-.categories-grid-unity {
+/* Category Grid FyuGen - Dark Theme */
+.categories-grid-FyuGen {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 32px;
     margin-top: 60px;
 }
 
-.category-item-unity {
+.category-item-FyuGen {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     padding: 40px;
@@ -595,7 +595,7 @@
     overflow: hidden;
 }
 
-.category-item-unity:hover {
+.category-item-FyuGen:hover {
     transform: translateY(-15px) scale(1.02);
     background: rgba(255, 255, 255, 0.06);
     border-color: rgba(123, 66, 245, 0.4);
@@ -616,7 +616,7 @@
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.category-item-unity span {
+.category-item-FyuGen span {
     font-size: 1.4rem;
     font-weight: 600;
     color: #fff;
@@ -643,7 +643,7 @@
     color: #fff;
 }
 
-.category-item-unity:hover {
+.category-item-FyuGen:hover {
     transform: translateY(-12px);
     background: rgba(123, 66, 245, 0.08);
     border-color: rgba(123, 66, 245, 0.3);
@@ -692,8 +692,8 @@
     text-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-/* Footer Unity - Deep Black with 3D border */
-.footer-unity {
+/* Footer FyuGen - Deep Black with 3D border */
+.footer-FyuGen {
     margin-top: 150px;
     padding: 100px 0 50px;
     background: #020205;
@@ -701,7 +701,7 @@
     position: relative;
 }
 
-.footer-unity::before {
+.footer-FyuGen::before {
     content: '';
     position: absolute;
     top: 0;
@@ -713,9 +713,18 @@
 
 @media (max-width: 992px) {
     .hero-content-container {
-        grid-template-columns: 1fr;
-        text-align: left;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
         padding-top: 100px;
+    }
+
+    .hero-text-block {
+        text-align: center;
+    }
+
+    .hero-actions {
+        justify-content: center;
     }
 
     .hero-visual-side {
@@ -733,6 +742,29 @@
     .ethereal-title {
         font-size: 3.5rem;
         letter-spacing: -1px;
+    }
+
+    .category-item-FyuGen {
+        padding: 24px;
+        gap: 16px;
+    }
+
+    .mentor-cta-banner {
+        padding: 40px 24px;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        border-radius: 24px;
+    }
+
+    .cta-content h2 {
+        font-size: 2rem;
+    }
+
+    .footer-minimal {
+        flex-direction: column;
+        gap: 20px;
+        text-align: center;
     }
 }
 
@@ -859,6 +891,7 @@
     margin-bottom: 16px;
     display: -webkit-box;
     -webkit-line-clamp: 2;
+    line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
 }

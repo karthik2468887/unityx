@@ -28,7 +28,7 @@ const ConceptDetail = () => {
             return;
         }
 
-        const success = await NativeService.triggerUPIIntent("concept@upi", "Unity Learn", concept.price);
+        const success = await NativeService.triggerUPIIntent("concept@upi", "FyuGen Learn", concept.price);
         if (success) {
             unlockConcept(id);
             alert("Concept unlocked! Happy learning.");
@@ -69,7 +69,7 @@ const ConceptDetail = () => {
                         </div>
 
                         <div className="detail-author">
-                            Created by <span className="author-link">{concept.mentorName || 'Unity Expert Mentor'}</span>
+                            Created by <span className="author-link">{concept.mentorName || 'FyuGen Expert Mentor'}</span>
                         </div>
 
                         <div className="detail-extra-info">
@@ -81,7 +81,7 @@ const ConceptDetail = () => {
 
                     <div className="hero-right">
                         {/* Floating Purchase Card */}
-                        <div className="purchase-card-unity">
+                        <div className="purchase-card-FyuGen">
                             <div className="preview-video-box">
                                 <img src={`https://picsum.photos/seed/${concept.id}/600/337`} alt="Preview Thumbnail" />
                                 <div className="video-overlay">
@@ -113,7 +113,7 @@ const ConceptDetail = () => {
                                         <li><PlayCircle size={16} /> Cinematic 4K Explainer</li>
                                         <li><Clock size={16} /> Precise & Concise Format</li>
                                         <li><Shield size={16} /> Lifetime Study Resource</li>
-                                        <li><Award size={16} /> Unity Verified Certificate</li>
+                                        <li><Award size={16} /> FyuGen Verified Certificate</li>
                                     </ul>
                                 </div>
 
@@ -167,7 +167,7 @@ const ConceptDetail = () => {
                     <div className="section-block">
                         <h2>Module Overview</h2>
                         <div className="description-text">
-                            <p>This Unity precision module is engineered to give you 80% of the value in 20% of the time. We focus on the most critical elements of {concept.concept}, stripping away the academic fluff to give you pure, actionable knowledge.</p>
+                            <p>This FyuGen precision module is engineered to give you 80% of the value in 20% of the time. We focus on the most critical elements of {concept.concept}, stripping away the academic fluff to give you pure, actionable knowledge.</p>
                             <p>Taught by industry experts with years of practical experience, this session provides the clarity you need to master the topic quickly and effectively.</p>
                         </div>
                     </div>
@@ -175,11 +175,11 @@ const ConceptDetail = () => {
                     {/* Mentor Info */}
                     <div className="mentor-info-section">
                         <h2>Instructor</h2>
-                        <div className="mentor-header-unity">
+                        <div className="mentor-header-FyuGen">
                             <div className="avatar-xl">{concept.mentorName?.[0] || 'U'}</div>
                             <div className="mentor-name-meta">
-                                <span className="name-link">{concept.mentorName || 'Unity Educator'}</span>
-                                <p className="title">Senior Curriculum Lead at Unity Precision Learning</p>
+                                <span className="name-link">{concept.mentorName || 'FyuGen Educator'}</span>
+                                <p className="title">Senior Curriculum Lead at FyuGen Precision Learning</p>
                             </div>
                         </div>
                         <div className="mentor-stats">
@@ -196,3 +196,4 @@ const ConceptDetail = () => {
 };
 
 export default ConceptDetail;
+

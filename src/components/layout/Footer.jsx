@@ -6,7 +6,7 @@ const Footer = () => {
         <footer className="professional-footer">
             <div className="content-max-width footer-grid">
                 <div className="footer-bio">
-                    <h3>Unity Platform</h3>
+                    <h3>FyuGen Platform</h3>
                     <p>A precision-driven micro-learning ecosystem designed to empower students with verified theoretical insight and mental models. Built for the future of digital education.</p>
                 </div>
                 <div className="footer-contact">
@@ -16,10 +16,11 @@ const Footer = () => {
                 </div>
             </div>
             <div className="footer-bottom">
-                <p>© 2026 Unity. Crafted for precision and clarity.</p>
+                <p>© 2026 FyuGen. Crafted for precision and clarity.</p>
             </div>
         </footer>
     );
 };
 
 export default Footer;
+

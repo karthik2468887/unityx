@@ -1,4 +1,4 @@
-.admin-unity {
+.admin-FyuGen {
     position: relative;
     background: #020205;
     /* Deep black base */
@@ -8,7 +8,7 @@
 }
 
 /* Luxury Vertical Plates for Admin Background */
-.admin-unity::before {
+.admin-FyuGen::before {
     content: '';
     position: absolute;
     top: 0;
@@ -29,7 +29,7 @@
 }
 
 .admin-header-premium,
-.admin-body-unity {
+.admin-body-FyuGen {
     position: relative;
     z-index: 10;
 }
@@ -52,7 +52,7 @@
     font-size: 1.1rem;
 }
 
-.admin-body-unity {
+.admin-body-FyuGen {
     padding: 60px 0 100px;
 }
 
@@ -145,7 +145,7 @@
 }
 
 /* --- TABLES --- */
-.review-table-unity,
+.review-table-FyuGen,
 .user-management-section {
     background: rgba(255, 255, 255, 0.02);
     backdrop-filter: blur(24px);
@@ -158,7 +158,7 @@
         inset 0 1px 1px rgba(255, 255, 255, 0.05);
 }
 
-.table-header-unity {
+.table-header-FyuGen {
     display: grid;
     grid-template-columns: 2fr 1.5fr 1.5fr 1fr 1fr;
     padding: 24px 32px;
@@ -317,14 +317,14 @@
 
 @media (max-width: 1024px) {
 
-    .table-header-unity,
+    .table-header-FyuGen,
     .table-row {
         grid-template-columns: 1.5fr 1fr 1fr 1fr;
     }
 }
 
 @media (max-width: 768px) {
-    .table-header-unity {
+    .table-header-FyuGen {
         display: none;
     }
 
@@ -336,5 +336,23 @@
 
     .col-actions {
         justify-content: flex-start;
+    }
+
+    .admin-header-premium {
+        padding: 80px 20px 40px;
+    }
+
+    .admin-header-premium h1 {
+        font-size: 2rem;
+    }
+
+    .admin-body-FyuGen {
+        padding: 40px 20px 80px;
+    }
+
+    .admin-tabs {
+        overflow-x: auto;
+        white-space: nowrap;
+        padding-bottom: 8px;
     }
 }

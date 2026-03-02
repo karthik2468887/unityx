@@ -57,9 +57,9 @@ const VideoPlayer = () => {
     }
 
     return (
-        <div className="video-player-unity">
-            <header className="player-header-unity">
-                <div className="content-max-width player-nav-unity">
+        <div className="video-player-FyuGen">
+            <header className="player-header-FyuGen">
+                <div className="content-max-width player-nav-FyuGen">
                     <button onClick={() => navigate(-1)} className="back-link">
                         <ChevronLeft size={20} />
                         <span>Return to Catalog</span>
@@ -115,7 +115,7 @@ const VideoPlayer = () => {
                                     <img src={`https://ui-avatars.com/api/?name=${concept.mentorName || 'Mentor'}&background=4f46e5&color=fff`} alt="Mentor" />
                                     <div>
                                         <span className="label">Delivered By</span>
-                                        <h4>{concept.mentorName || 'Unity Expert'}</h4>
+                                        <h4>{concept.mentorName || 'FyuGen Expert'}</h4>
                                     </div>
                                 </div>
                                 <div className="meta-stats">
@@ -267,3 +267,4 @@ const ShieldOff = ({ size }) => (
 );
 
 export default VideoPlayer;
+
